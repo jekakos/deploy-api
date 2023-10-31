@@ -26,6 +26,8 @@ app.get('/manual-deploy', (req, res) => {
 });
 
 app.post('/github-webhook', (req, res) => {
+    console.log('github-webhook:');
+    console.log(req.body);
     const branch = req.body.ref.split('/').pop();
     console.log(`Webhook with branch: ${branch}`);
 
