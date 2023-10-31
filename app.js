@@ -1,8 +1,9 @@
 const express = require('express');
 const { exec } = require('child_process');
-const { error } = require('console');
-const { stdout } = require('process');
+const bodyParser = require('body-parser');
 const app = express();
+
+app.use(bodyParser.json());
 
 function deploy() {
     console.log(`Start deploy`);
