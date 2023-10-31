@@ -11,4 +11,5 @@ git pull origin main
 
 cd ~/deploy
 docker-compose down
+docker-compose build --no-cache
 docker-compose up -d
