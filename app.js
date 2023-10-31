@@ -6,7 +6,7 @@ const app = express();
 
 function deploy() {
     console.log(`Start deploy`);
-    exec('./deploy.sh', (error, stdout, stderr) => {
+    exec('~/deploy/deploy.sh', (error, stdout, stderr) => {
         if (error) {
             console.error(`exec error: ${error}`);
             return;
