@@ -1,0 +1,13 @@
+{
+  "name": "webhook-listener",
+  "version": "1.0.0",
+  "description": "A simple Express.js app to listen to GitHub webhooks",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  }
+}
