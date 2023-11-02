@@ -17,3 +17,4 @@ docker image prune -af #delete unuse images
 docker container prune -f # Удаляет все остановленные контейнеры
 docker volume prune -f # Удаляет все неиспользуемые тома
 docker network prune -f # Удаляет все неиспользуемые сети
+docker builder prune -af
