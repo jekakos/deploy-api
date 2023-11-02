@@ -4,8 +4,15 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
+let isDeploying = false;
 
 function deploy() {
+
+    if (isDeploying) {
+        console.log('Deploy is already running.');
+        return;
+    }
+    isDeploying = true;
     console.log(`Start deploy`);
     exec('~/deploy/deploy.sh', (error, stdout, stderr) => {
         if (error) {
@@ -14,6 +21,7 @@ function deploy() {
         }
         console.log(`stdout: ${stdout}`);
         console.error(`stderr: ${stderr}`);
+        isDeploying = false;
     });
 }
 
