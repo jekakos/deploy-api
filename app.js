@@ -16,6 +16,7 @@ function deploy() {
     console.log(`Start deploy`);
     exec('~/deploy/deploy.sh', (error, stdout, stderr) => {
         if (error) {
+            isDeploying = false;
             console.error(`exec error: ${error}`);
             return;
         }
