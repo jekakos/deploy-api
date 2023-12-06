@@ -14,7 +14,7 @@ function deploy() {
     }
     isDeploying = true;
     console.log(`Start deploy`);
-    exec('~/deploy/deploy.sh', (error, stdout, stderr) => {
+    exec('~/mlc/deploy/deploy.sh', (error, stdout, stderr) => {
         if (error) {
             isDeploying = false;
             console.error(`exec error: ${error}`);

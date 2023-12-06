@@ -1,15 +1,15 @@
 #!/bin/bash
 
-cd ~/bot
+cd ~/mlc/bot
 git pull origin main
 
-cd ~/api
+cd ~/mlc/api
 git pull origin main
 
-cd ~/ym-api
+cd ~/mlc/ym-api
 git pull origin main
 
-cd ~/deploy
+cd ~/mlc/deploy
 docker-compose down || exit 1
 sleep 10
 docker builder prune -af

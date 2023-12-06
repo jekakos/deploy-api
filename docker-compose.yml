@@ -1,7 +1,7 @@
 version: '3'
 services:
   bot:
-    build: ~/bot
+    build: ~/mlc/bot
     ports:
       - "3000:3000"
     depends_on:
@@ -17,13 +17,13 @@ services:
     restart: on-failure
 
   api:
-    build: ~/api
+    build: ~/mlc/api
     ports:
       - "3050:3050"
     restart: on-failure
 
   ym_api:
-    build: ~/ym-api
+    build: ~/mlc/ym-api
     ports:
       - "5050:5050"
     restart: on-failure
