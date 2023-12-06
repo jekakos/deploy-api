@@ -6,6 +6,7 @@ services:
       - "3000:3000"
     depends_on:
       - redis
+    restart: on-failure
 
   redis:
     image: "redis:alpine"
@@ -13,16 +14,19 @@ services:
       - "6379:6379"
     volumes:
       - redis-data:/data
+    restart: on-failure
 
   api:
     build: ~/api
     ports:
       - "3050:3050"
+    restart: on-failure
 
   ym_api:
     build: ~/ym-api
     ports:
       - "5050:5050"
+    restart: on-failure
 
 volumes:
   redis-data:
